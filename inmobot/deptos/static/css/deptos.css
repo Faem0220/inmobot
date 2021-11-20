@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik:wght@300&display=swap');
+html{
+    font-family: 'Rubik' ;
+    background-color: black;
+    color:aliceblue;
+    font-size: 17px;
+}
+a{
+    color:#4b85ac;
+}
+
+.nav-bar{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: 1px color red;
+}
+.title {
+    text-align: center;
+    padding:20px;
+
+}
+.list-deptos{
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+.depto-item{
+    border:1px solid gray;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #111111;
+    padding: 5px;
+}
+    .item-location{
+        background-color: #000000;
+        padding:15px;
+    }
+
+.check{
+    padding:5px;
+    font-size: 20px;
+    margin-top: 10px;
+    background-color: #222222;
+}
+.item-url{
+    font-weight: bold;
+}
+button{
+    font-size: 30px;
+    padding:10px;
+    background-color: #AAAAAA;
+    border-radius: 10px;
+}
+
+@media(max-width: 500px){
+    html{
+        font-size:50px;
+    }
+   
+}

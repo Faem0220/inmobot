@@ -1,0 +1,40 @@
+{% load static %}
+<html>
+    <head>
+        <title>Inmobot</title>
+        <link rel="stylesheet" href="{% static 'css/deptos.css' %}">
+    </head>
+    <div class="nav-bar">
+        <p><a href="/admin"> Login </a></p>
+        <p><a href="/"> Nuevos </a></p>
+        <p><a href="/selected"> Seleccionados </a></p>
+    </div>
+
+    <div class="title">
+        <h1>NUEVOS DEPARTAMENTOS EN ALQUILER</h1>
+        <p> Nuevos deptos: {{ deptos.count }}</p>
+        {% if user.is_authenticated %}
+        <button type="submit" name="select">Limpiar</button>
+        {% endif %}
+    </div>
+    <form action="" method="post">
+        {% csrf_token %}
+        
+        <div class="list-deptos">
+            {% for depto in deptos %}
+            <div class="depto-item"> 
+                <h2 class="item-location">{{ depto.location }}</a></h2>
+                <h3 class="item-price">$ {{ depto.price}} ARS</h3>
+                <p>Area: {{depto.area}}mts²</p>
+                <p>Precio por mt²: {{depto.mt_price}}</p>
+                <p>Dormitorios: {{depto.rooms}}</p>
+                <a class="item-url" href={{depto.url}} target="_blank">Enlace a publicación</a>
+                <div class="check">
+                    <label> Seleccionar <input name="selected" type="checkbox" value={{depto.ib}}></label>
+                    <label> Eliminar <input name="deleted" type="checkbox" value={{depto.ib}}></label>
+                </div>   
+            </div>
+            {% endfor %}
+        </div>
+    </form>
+</html>
