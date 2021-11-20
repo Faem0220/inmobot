@@ -52,6 +52,7 @@ button{
     padding:10px;
     background-color: #AAAAAA;
     border-radius: 10px;
+    align-self: center;
 }
 
 @media(max-width: 500px){

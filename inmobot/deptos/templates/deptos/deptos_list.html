@@ -9,15 +9,17 @@
         <p><a href="/"> Nuevos </a></p>
         <p><a href="/selected"> Seleccionados </a></p>
     </div>
-
+    <form action="" method="post">
     <div class="title">
         <h1>NUEVOS DEPARTAMENTOS EN ALQUILER</h1>
         <p> Nuevos deptos: {{ deptos.count }}</p>
         {% if user.is_authenticated %}
         <button type="submit" name="select">Limpiar</button>
         {% endif %}
+        
     </div>
-    <form action="" method="post">
+    
+       
         {% csrf_token %}
         
         <div class="list-deptos">
