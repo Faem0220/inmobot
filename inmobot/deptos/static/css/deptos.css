@@ -54,10 +54,15 @@ button{
     border-radius: 10px;
     align-self: center;
 }
-
-@media(max-width: 500px){
-    html{
-        font-size:50px;
-    }
-   
+#scrap{
+    font-size:12px;
+    background-color: #b2cee0;
+    padding:5px;
 }
+@media (max-width: 600px) {
+    .list-deptos {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+         }
+        }

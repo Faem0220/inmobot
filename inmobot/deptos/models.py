@@ -13,7 +13,7 @@ class Inmueble(models.Model):
     mt_price = models.IntegerField(null=False)
     rooms = models.IntegerField(null=False)
     pub_date = models.CharField(max_length=100)
-    ib = models.CharField(max_length=20)
+    ib = models.CharField(max_length=20,unique=True)
     url = models.URLField(null=False)
     status = models.CharField(max_length=3,
                             choices=STATUS,
