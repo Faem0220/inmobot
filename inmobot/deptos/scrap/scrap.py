@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 from datetime import date
+import time
 
 
 date = date.today().isoformat()
@@ -56,6 +57,7 @@ def buscar_deptos(precio_max):
                         lista_deptos.append(Depto)
             except:
                 print('error en formato')
+        time.sleep(5)
  
     lista__ordenada = sorted(lista_deptos, key=lambda k: k['Precio_mt2'])
     # se retorna la lista de dict
