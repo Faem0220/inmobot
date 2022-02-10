@@ -2,11 +2,18 @@ from .models import Inmueble
 from .scrap.scrap import buscar_deptos
 
 
-def extract_data_deptos():
-    lista_deptos = buscar_deptos(50000)
+
+
+def extract_data_deptos(user,ciudad,precio,dormitorios):
+    if ciudad.lower() == 'la plata':
+        ciudad = 'la-plata-casco-urbano'
+    elif ciudad.lower() == 'capital federal':
+        ciudad = 'capital-federal'
+    lista_deptos = buscar_deptos(ciudad,precio,dormitorios)
     for depto in lista_deptos:
         try:
             depto = Inmueble.objects.create(
+                user = user,
                 location = depto['Ubicacion'],
                 price = depto['Precio'],
                 area = depto['Superficie'],

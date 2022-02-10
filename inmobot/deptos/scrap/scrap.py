@@ -6,13 +6,13 @@ import time
 
 date = date.today().isoformat()
 
-def buscar_deptos(precio_max):
+def buscar_deptos(ciudad,precio_max,dormitorios):
     # Extrae de la url departamentos segun filtros y los almacena en la base de datos
     lista_deptos = []
 
     pages = 10
     for page in range(1,pages):
-        url = f'https://www.inmobusqueda.com.ar/departamento-la-plata-casco-urbano-0-{precio_max}-pesos-pagina-{page}.html?cdormitorios=1.'
+        url = f'https://www.inmobusqueda.com.ar/departamento-{ciudad}-0-{precio_max}-pesos-pagina-{page}.html?cdormitorios={dormitorios}.'
         html_text = requests.get(url).text
         soup = BeautifulSoup(html_text, 'lxml')
         # Se selecciona el cuadro con los datos de las casas para extraer datos

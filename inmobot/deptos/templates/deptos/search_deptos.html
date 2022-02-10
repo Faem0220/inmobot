@@ -1,0 +1,55 @@
+
+{% load static %}
+<html>
+    <head>
+        <title>Inmobot</title>
+        <link rel="stylesheet" href="{% static 'css/deptos.css' %}" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <div class="nav-bar">
+        <p><a href="/admin"> Login </a></p>
+        <p><a href="/"> Nuevos </a></p>
+        <p><a href="/selected"> Seleccionados </a></p>
+        
+    </div>
+   
+    <div class="title">
+       
+        <form 
+        action="" 
+        method="post">
+        {% csrf_token %}
+            <input
+            name="precio_max"
+            placeholder="precio max" 
+            type="text">
+
+            </input>
+            <p>.</p>
+            <br>
+            <select
+             name="ciudad">
+                <option value="la plata"> La Plata
+                </option>
+                <option value="capital federal"> Capital Federal
+                </option>
+
+            </select>
+            <p>.</p>
+            <br>
+            <input
+            name="dormitorios"
+            placeholder="dormitorios" 
+            type="number">
+            </input>
+            <br>
+            <p>.</p>
+    
+            <button id="scrap"
+            type="submit" name="search">
+            search
+            </button>
+        
+        </form>
+    </div>
+</html>
