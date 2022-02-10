@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.contrib import admin
 
 # Create your models here.
 class Inmueble(models.Model):
@@ -7,6 +9,7 @@ class Inmueble(models.Model):
         ('SEL', 'Selected'),
         ('DEL', 'Deleted'),
     ]
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     location = models.CharField(max_length=200)
     price = models.BigIntegerField(null=False)
     area = models.IntegerField(null=False)
@@ -21,3 +24,6 @@ class Inmueble(models.Model):
 
     def __str__(self):
         return self.location
+
+
+

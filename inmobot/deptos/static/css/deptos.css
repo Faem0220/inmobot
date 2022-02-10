@@ -47,6 +47,10 @@ a{
 .item-url{
     font-weight: bold;
 }
+.search-form{
+    display:flex;
+    flex-direction: column;
+}
 button{
     font-size: 30px;
     padding:10px;
